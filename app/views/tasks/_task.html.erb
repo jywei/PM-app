@@ -2,7 +2,7 @@
   <% if task.completed? %>
     <div class="complete">
       <%= link_to complete_project_task_path(@project, task.id), method: :patch do %>
-        <i style="opacity: 0.4;", class="fa fa-check"></i>
+        <i style="opacity: 0.4;", class="fa fa-check fa-2x"></i>
       <% end %>
     </div>
     <div class="todo_item">
@@ -10,13 +10,13 @@
     </div>
     <div class="trash">
       <%= link_to project_task_path(@project, task.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i style="opacity: 0.4;", class="fa fa-trash"></i>
+        <i style="opacity: 0.4;", class="fa fa-trash fa-2x"></i>
       <% end %>
     </div>
   <% else %>
     <div class="complete">
       <%= link_to complete_project_task_path(@project, task.id), method: :patch do %>
-        <i class="fa fa-check"></i>
+        <i class="fa fa-check fa-2x"></i>
       <% end %>
     </div>
     <div class="todo_item">
@@ -24,7 +24,7 @@
     </div>
     <div class="trash">
       <%= link_to project_task_path(@project, task.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i class="fa fa-trash"></i>
+        <i class="fa fa-trash fa-2x"></i>
       <% end %>
     </div>
   <% end %>
