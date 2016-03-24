@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324054120) do
+ActiveRecord::Schema.define(version: 20160324054352) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -19,5 +19,14 @@ ActiveRecord::Schema.define(version: 20160324054120) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "preject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tasks", ["preject_id"], name: "index_tasks_on_preject_id"
 
 end
